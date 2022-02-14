@@ -766,3 +766,21 @@ please send us a pull request!
 ---
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/SeleniumHQ/docker-selenium)
+
+
+# robertsmd updates
+
+## build
+
+```bash
+docker build -t selenium/node-firefox:75.0b9 -f NodeFirefox/Dockerfile .
+cd Standalone
+docker build -t selenium/standalone-firefox:75.0b9 -f ../StandaloneFirefox/Dockerfile .
+```
+
+## run
+```bash
+docker run -d -p 4444:4444 -p 7900:7900 --name selenium-firefox-75 --shm-size="2g" selenium/standalone-firefox:75.0b9
+docker rm -f selenium-firefox-75
+```
+
